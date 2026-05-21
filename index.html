@@ -2,446 +2,979 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>God’s Provision: A Journey of Faith and Service</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Great Mission</title>
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #FAEBD7;
-            color: #4E4B3B;
-            transition: background-color 0.3s ease-in-out;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: #C2B280;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease-in-out;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .navbar-nav .nav-link {
-            color: #FFF !important;
-            font-size: 1.1rem;
-            padding: 15px 20px;
-            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.2s ease;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f6f1e8;
+      color: #102019;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link:active {
-            background-color: #A88C57;
-            border-radius: 5px;
-            color: #4E4B3B;
-            transform: scale(1.08);
-        }
+    h1,
+    h2,
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
 
-        .nav-item {
-            padding: 0 1.5rem;
-        }
+    section {
+      position: relative;
+      padding: 120px 8%;
+    }
 
-        .navbar-toggler {
-            border: none;
-            background-color: #FFF;
-        }
+    .container {
+      max-width: 1300px;
+      margin: auto;
+    }
 
-        .navbar-toggler-icon {
-            background-color: #ffffff;
-        }
+    /* NAVBAR */
 
-        /* Content */
-        .content {
-            padding-top: 100px;
-            padding-bottom: 50px;
-        }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      backdrop-filter: blur(14px);
+      background: rgba(9, 20, 16, 0.6);
+      border-bottom: 1px solid rgba(216, 183, 106, 0.15);
+    }
 
-        /* Sections */
-        .section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            background-color: #FFF;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-            transition: transform 0.3s ease-in-out;
-        }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+    }
 
-        .section:hover {
-            transform: scale(1.02);
-        }
+    .logo {
+      color: #fff;
+      font-size: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-        .section h2 {
-            text-align: center;
-            width: 100%;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #4E4B3B;
-        }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
 
-        .section-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            gap: 30px;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      transition: 0.3s ease;
+      position: relative;
+    }
 
-        /* Text Section */
-        .text-section {
-            max-width: 60%;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #4E4B3B;
-            transition: color 0.3s ease-in-out;
-            text-align: center;
-        }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: #d8b76a;
+      transition: 0.3s ease;
+    }
 
-        .text-section p {
-            margin-bottom: 20px;
-        }
+    .nav-links a:hover {
+      color: #d8b76a;
+    }
 
-        /* Image Section */
-        .image-section {
-            flex-shrink: 0;
-            width: 35%;
-        }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-        .image-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
+    /* HERO */
 
-        .image-section img:hover {
-            transform: scale(1.05);
-        }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top, rgba(216, 183, 106, 0.25), transparent 35%),
+        linear-gradient(135deg, #f5eee4 0%, #d6d0c4 35%, #102019 100%);
+      overflow: hidden;
+    }
 
-        /* Banner */
-        .banner {
-            width: 100%;
-            height: 300px;
-            background: url('banner.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0088ff;
-            font-size: 2.5em;
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.6);
-            text-align: center;
-            padding: 20px;
-            transition: background-color 1s ease-in-out;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 80px;
+    }
 
-        /* Q&A Section */
-        .qna-section {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #FFF;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
+    .hero-tag {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid rgba(216, 183, 106, 0.3);
+      border-radius: 100px;
+      color: #d8b76a;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 30px;
+    }
 
-        .qna-item {
-            margin-bottom: 15px;
-        }
+    .hero h1 {
+      font-size: clamp(4rem, 8vw, 7rem);
+      color: #fff;
+      line-height: 0.95;
+      margin-bottom: 35px;
+    }
 
-        .qna-item h5 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
+    .hero p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 35px;
+    }
 
-        .qna-answer {
-            padding: 15px;
-            background-color: #FAEBD7;
-            border-radius: 10px;
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #4E4B3B;
-        }
+    .verse {
+      border-left: 2px solid #d8b76a;
+      padding-left: 24px;
+      color: rgba(255, 255, 255, 0.75);
+      font-style: italic;
+      margin-bottom: 40px;
+    }
 
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
 
-        /* Footer */
-        .footer {
-            background-color: #C2B280;
-            text-align: center;
-            padding: 30px 20px;
-            color: #FFF;
-            font-size: 1rem;
-            position: relative;
-            width: 100%;
-            margin-top: 50px;
-        }
+    .btn {
+      padding: 16px 30px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: 0.35s ease;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
+    .btn-primary {
+      background: #d8b76a;
+      color: #102019;
+      box-shadow: 0 10px 40px rgba(216, 183, 106, 0.25);
+    }
 
-            .text-section {
-                max-width: 100%;
-                font-size: 1rem;
-                padding: 0 !important;
-            }
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
 
-            .image-section {
-                max-width: 70% !important;
-            }
+    .btn-gold {
+      border: 1px solid rgba(216, 183, 106, 0.35);
+      color: #d8b76a;
+    }
 
-            .image-section img {
-                width: 100%;
-                max-height: 250px;
-                object-fit: cover;
-            }
-        }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
 
-        #identity {
-            background-color: #FFF;
-            padding: 40px 20px;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-        }
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
 
-        #identity .section-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            gap: 30px;
-        }
+    .hero-glow {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(216, 183, 106, 0.35);
+      filter: blur(120px);
+    }
 
-        #identity .text-section {
-            max-width: 60%;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #4E4B3B;
-        }
+    .hero-image img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 40px;
+      object-fit: cover;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        #identity .image-section {
-            flex-shrink: 0;
-            width: 35%;
-        }
+    /* COMMON */
 
-        #identity .image-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+    .section-line {
+      width: 90px;
+      height: 2px;
+      background: #d8b76a;
+      margin-bottom: 35px;
+    }
 
-        @media (max-width: 768px) {
-            #identity .section-content {
-                flex-direction: column-reverse;
-                align-items: center;
-                text-align: center;
-            }
+    .section-title {
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: 35px;
+      line-height: 1;
+    }
 
-            #identity .text-section {
-                max-width: 100%;
-                font-size: 1rem;
-            }
+    .split-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 80px;
+    }
 
-            #identity .image-section {
-                max-width: 70% !important;
-            }
+    .split-layout img {
+      width: 100%;
+      border-radius: 36px;
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
 
-            #identity .image-section img {
-                width: 100%;
-                max-height: 250px;
-                object-fit: cover;
-            }
-        }
-    </style>
+    .light-section {
+      background: #fbf8f2;
+    }
 
+    .dark-section {
+      background: #102019;
+      color: white;
+    }
 
+    .dark-section p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .section-text p {
+      font-size: 1.08rem;
+      margin-bottom: 22px;
+      color: #4a5b52;
+    }
+
+    /* CARDS */
+
+    .center-text {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 70px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      padding: 45px 35px;
+      border-radius: 32px;
+      border: 1px solid rgba(216, 183, 106, 0.15);
+      transition: 0.4s ease;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #102019;
+      color: #d8b76a;
+      font-size: 1.5rem;
+      margin-bottom: 28px;
+    }
+
+    .card h3 {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    /* AUDIENCE */
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+      margin-top: 70px;
+    }
+
+    .audience-box {
+      background: white;
+      border-radius: 28px;
+      padding: 45px 25px;
+      text-align: center;
+      border: 1px solid rgba(216, 183, 106, 0.1);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.04);
+      transition: 0.35s ease;
+    }
+
+    .audience-box:hover {
+      transform: translateY(-8px);
+    }
+
+    .audience-box span {
+      font-size: 2rem;
+      color: #d8b76a;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    /* THEOLOGY */
+
+    .theology {
+      background:
+        linear-gradient(rgba(10, 20, 16, 0.88), rgba(10, 20, 16, 0.88)),
+        url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1400&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .theology p {
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 850px;
+      margin: auto auto 28px;
+      font-size: 1.08rem;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #0d1713;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 45px;
+      border-radius: 36px;
+      border: 1px solid rgba(216, 183, 106, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 22px;
+      border-radius: 22px;
+      color: white;
+      outline: none;
+      font-family: inherit;
+      transition: 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #d8b76a;
+    }
+
+    .qr-box {
+      width: 120px;
+      height: 120px;
+      border-radius: 22px;
+      border: 1px solid rgba(216, 183, 106, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      color: rgba(216, 183, 106, 0.7);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 90px;
+      padding-top: 35px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.9rem;
+    }
+
+    /* ANIMATIONS */
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-text p,
+    .center-text p {
+      text-align: justify;
+      line-height: 1.9;
+    }
+
+    .contact-info p {
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .contact-info a {
+      color: #d8b76a;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      opacity: 0.8;
+    }
+
+    .qr-wrapper {
+      margin-top: 40px;
+    }
+
+    .qr-title {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 992px) {
+
+      .hero-grid,
+      .split-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 160px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 100px 7%;
+      }
+
+      .hero h1 {
+        line-height: 1.05;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .section-text p,
+      .center-text p {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#identity">Identity</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimony">Testimony</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#vision">Vision</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#audience">Target Audience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="banner">
-        God’s Provision: A Journey of Faith and Service
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">The Great Mission</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#testimony">Testimony</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Support</a>
+      </div>
     </div>
-    <div class="content">
-        <section id="identity" class="section">
-            <h2>My Identity</h2>
-            <div class="section-content">
-                <div class="text-section" style="padding-right: 5rem;">
-                    <p>My name is <strong>Charles Joshua Chakma</strong>, and I was born and raised in Chandraghona, Chittagong, Bangladesh. Growing up in a Christian family in a predominantly Muslim country, I faced many challenges. In Bangladesh, Christians make up only about 0.4% of the population. As a child, I was constantly surrounded by people of other faiths in my schools and neighborhood. These experiences shaped my early identity and understanding of faith.
+  </nav>
 
-                        <br>Although I was raised in a godly household—my father a pastor and my mother a devoted woman leader—I later realized that, for much of my early life, I was only going through the motions of Christianity. It wasn’t until my late teenage years that I truly understood what it meant to surrender my heart to Christ. That moment became the turning point of my spiritual journey.
-                        
-                       <br>I have completed my Bachelor of Science in Computer Science, which has equipped me with valuable technical skills. However, my deepest passion lies in serving God and sharing His message. My upbringing, spiritual transformation, and the influence of my parents' ministry have inspired me to pursue a life devoted to advancing God’s kingdom.
-                    </p>
-                </div>
-                <div class="image-section">
-                    <img src="CJ.jpg" alt="My Identity" style="max-width: 80%;">
-                </div>
-            </div>
-        </section>
-        <section id="testimony" class="section">
-            <h2>My Testimony: How I Accepted Christ</h2>
-            <div class="section-content">
-                <div class="image-section">
-                    <img src="Baptism_CJ.jpg" alt="My Testimony" style="max-width: 120%;">
-                </div>
-                <div class="text-section text-left" style="padding-left: 5rem;">
-                    <p>I grew up in a Christian family where faith was lived out in front of me daily. My parents were strong role models, and I followed the Christian traditions they taught me. At first, my devotion to God was sincere, but as I grew older and encountered different people and beliefs, my relationship with God became more about routine and pride. I began to rely on my biblical knowledge, seeking to impress others rather than truly connecting with Christ. In my pride, I thought my faith made me better than others.
+  <!-- HERO -->
 
-                        <br>The turning point came when God opened my eyes to the reality that my faith was missing the depth of love, humility, and genuine devotion that He desires. I was convicted by the truth that I had been living for myself, not for God. In that moment, I realized that my relationship with Christ had been built on self-righteousness rather than a true commitment to follow Him.
-                        
-                        <br>In 2020, I repented of my pride and surrendered my life to Jesus. I accepted Him not only as my Savior but also as the Lord of my life, and I was baptized as a public declaration of my newfound faith. That moment marked the beginning of a true transformation in my life.
-                        
-                        <br>Since then, God has continued to shape me, particularly through my involvement with different ministry and my parent's ministry work . Through meditation getting spiritual maturity and Trying to preach and share the gospel. Today, I continue to grow in humility and deepen my relationship with God, seeking to live according to His will.
-                        
-                        <br>My heart is now set on becoming a spiritual leader who listens, understands, and walks alongside others, sharing the hope and love of Jesus with those around me.
-                        
-                        </p>
-                </div>
-            </div>
-        </section>
-        <section id="vision" class="section">
-            <h2>My Vision for The Kingdom</h2>
-            <div class="text-section">
-                <p>My vision is to become a passionate servant of Christ, growing in both my knowledge and character. I
-                    desire to be a leader who leads by example, pointing people to Christ through my actions and words.
-                    I want to be someone who loves deeply, listens with compassion, and shares the gospel with humility.
-                    Through continual growth in both knowledge and character, I aim to guide others to a deeper
-                    understanding of God’s message and their purpose in His Kingdom.
-                    <br>As I live in a modern age, I also dream of using my technical skills to connect with people
-                    through
-                    social media and online platforms. Since many in Bangladesh primarily understand Bangla, I want to
-                    create a social media platform that provides easy Bangla translations. My future goal is to build a
-                    dedicated team that will work alongside me to translate foreign-language sermons, lectures, and
-                    gospel messages into Bangla, ensuring that everyone can access and understand the truth of God’s
-                    Word in their heart language.
-                    <br>This platform will serve as a lifeline for those who do not have a church nearby or cannot
-                    attend
-                    one for various reasons. Additionally, many Muslims converts in Bangladesh face persecution and
-                    cannot openly proclaim their faith in Christ without severe consequences. For them, this platform
-                    will provide a safe space where they can attend an online church, receive spiritual nourishment, and
-                    grow in their faith without fear.
-                    <br>I believe that by living with grace and unwavering faith, I can help others experience the
-                    transformative power of God’s love, just as I have. My heart’s desire is to equip others to walk in
-                    the fullness of their faith, whether they are new to Christianity or have been walking with the Lord
-                    for many years. I long to see a world where people are not just aware of Christ but truly know
-                    Him—living in relationship with Him and fully embracing the purpose He has for them.
-                </p>
-            </div>
-        </section>
-        <section id="audience" class="section">
-            <h2>Target Audience</h2>
-            <div class="text-section">
-                <p>In Bangladesh, Muslims constitute about 91% of the population, and Christianity remains a minority
-                    faith. Unfortunately, misconceptions about Jesus and Christianity are widespread among the Muslim
-                    population. Many of my Muslim friends and neighbours have misconceptions about who Jesus is, and
-                    often, they are taught a distorted version of His identity. These misconceptions, along with
-                    stereotypes and misunderstandings, make it challenging to have open conversations about faith. <br>But I
-                    see a significant opportunity to bridge these gaps and reach out to those who have not yet
-                    encountered the truth. I am deeply burdened for the Muslim people of Bangladesh and feel a strong
-                    calling to engage with them in love and humility. Through sharing the message of Jesus, I hope to
-                    address these misconceptions and promote a more accurate understanding of Christianity. I believe
-                    that by breaking down barriers of misunderstanding and showing them the truth of who Jesus really
-                    is, I can help lead them to faith in Him. 
-                    <br>As it is written in <strong>Matthew 28:19-20, “Go therefore and
-                    make disciples of all nations... teaching them to observe all that I have commanded you,”</strong> 
-                    <br>I believe
-                    it is my responsibility to reach out to those who have not yet heard the truth, particularly those
-                    in my community who have never had the opportunity to understand who Jesus is.</p>
-            </div>
-        </section>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="fade-up">
+        <div class="hero-tag">Missionary Portfolio</div>
 
-        <section class="section">
-            <div class="qna-section">
-                <div class="qna-item">
-                    <!-- Question -->
-                    <h5>My Dream of Studying Theology Abroad</h5>
-                    <!-- Answer -->
-                    <div class="qna-answer">
-                        <p>
-                            My dream of studying theology abroad is rooted in a deep desire to grow closer to God and be
-                            equipped to serve others more effectively. I long to study in a seminary located in a
-                            different country—a place with a new culture, where I can be surrounded by fellow believers
-                            who are passionate about knowing and living out the Word of God.
+        <h1>
+          Living for Christ.<br>
+          Serving His Kingdom.
+        </h1>
 
-                            <br>Being in such a country would give me the opportunity to experience authentic
-                            testimonies, witness the power of faith in action, and immerse myself in an environment that
-                            nurtures spiritual maturity. I believe that such an atmosphere will challenge and transform
-                            me, helping me to better understand God's Word and apply it in my own life and ministry.
+        <p>
+          Called to share the Gospel, disciple hearts, and pursue God’s vision through ministry, theology, and service.
+        </p>
 
-                            <br>This dream is not just about education; it’s about preparation. I want to learn how to
-                            preach the Gospel clearly, how to counsel those in need, how to reach out with genuine love,
-                            and how to disciple others faithfully. Most importantly, I want to return home better
-                            equipped to engage with the Muslim community I live among—sharing the love of Christ in a
-                            way that is respectful, compassionate, and effective.
-
-                            <br>Studying theology abroad is no longer just a desire—it feels like a calling from God. I
-                            believe He has already begun to open doors, and I trust that He will continue to guide me as
-                            I take each step forward in faith.
-                        </p>
-                    </div>
-                </div>
-
-        
-
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <div class="text-section">
-                <p>I would love to stay connected with you on this journey. Please feel free to reach out to me through
-                    the following contacts:
-                    <br>- Email: <a href="mailto:cjcrohan@gmail.com">cjcrohan@gmail.com</a>
-                    <br>- Phone (with WhatsApp): +8801841305813
-                    <br>- Instagram: <a href="https://www.instagram.com/just_a_blessed_guy/">[Instagram link]</a>
-                    <br>- Facebook: <a href="https://www.facebook.com/Just.A.Blessed.Guy/">[Facebook link]</a>
-                    <br>Thank you for your prayers and support as I take this step towards fulfilling God’s calling in
-                    my life.
-                </p>
-            </div>
-        </section>
-
-        <div class="footer">
-            <p>&copy; 2025 Charles Joshua Chakma. All rights reserved.</p>
+        <div class="verse">
+          “Here am I. Send me.” — Isaiah 6:8
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <div class="hero-buttons">
+          <a href="#testimony" class="btn btn-primary">My Testimony</a>
+          <a href="#vision" class="btn btn-outline">My Vision</a>
+          <a href="#contact" class="btn btn-gold">Support My Journey</a>
+        </div>
+      </div>
+
+      <div class="hero-image fade-up">
+        <div class="hero-glow"></div>
+
+        <img src="CJ.jpg" alt="Missionary Portrait">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about" class="light-section">
+    <div class="container">
+
+      <div class="center-text fade-up" style="max-width: 850px;">
+
+        <div class="section-line" style="margin-inline:auto"></div>
+
+        <h2 class="section-title">
+          Who I Am
+        </h2>
+
+        <p style="font-size: 1.12rem; color:#4a5b52; margin-bottom:24px;">
+          My name is <strong>Charles Joshua Chakma</strong>, and I was born and raised in Chandraghona, Chittagong,
+          Bangladesh. Growing
+          up in a Christian family in a predominantly Muslim country, I faced many challenges. In Bangladesh, Christians
+          make up only about 0.4% of the population. As a child, I was constantly surrounded by people of other faiths
+          in my schools and neighborhood. These experiences shaped my early identity and understanding of faith.
+        </p>
+
+        <p style="font-size: 1.12rem; color:#4a5b52;">
+          Although I was raised in a godly household my father a pastor and my mother a devoted woman leader I later
+          realized that, for much of my early life, I was only going through the motions of Christianity. It wasn’t
+          until my late teenage years that I truly understood what it meant to surrender my heart to Christ. That moment
+          became the turning point of my spiritual journey.
+          I have completed my Bachelor of Science in Computer Science, which has equipped me with valuable technical
+          skills. However, my deepest passion lies in serving God and sharing His message. My upbringing, spiritual
+          transformation, and the influence of my parents' ministry have inspired me to pursue a life devoted to
+          advancing God’s kingdom.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONY -->
+
+  <section id="testimony" class="dark-section">
+    <div class="container split-layout">
+      <div class="section-text fade-up">
+        <div class="section-line"></div>
+
+        <h2 class="section-title">How I Found Christ</h2>
+
+        <p>
+          I grew up in a Christian family where faith was lived out in front of me daily. My parents were strong role
+          models, and I followed the Christian traditions they taught me. At first, my devotion to God was sincere, but
+          as I grew older and encountered different people and beliefs, my relationship with God became more about
+          routine and pride. I began to rely on my biblical knowledge, seeking to impress others rather than truly
+          connecting with Christ. In my pride, I thought my faith made me better than others.
+          The turning point came when God opened my eyes to the reality that my faith was missing the depth of love,
+          humility, and genuine devotion that He desires. I was convicted by the truth that I had been living for
+          myself, not for God. In that moment, I realized that my relationship with Christ had been built on
+          self-righteousness rather than a true commitment to follow Him.
+          In 2020, I repented of my pride and surrendered my life to Jesus. I accepted Him not only as my Savior but
+          also as the Lord of my life, and I was baptized as a public declaration of my newfound faith. That moment
+          marked the beginning of a true transformation in my life.
+          Since then, God has continued to shape me, particularly through my involvement with different ministry and my
+          parent's ministry work . Through meditation getting spiritual maturity and Trying to preach and share the
+          gospel. Today, I continue to grow in humility and deepen my relationship with God, seeking to live according
+          to His will.
+          My heart is now set on becoming a spiritual leader who listens, understands, and walks alongside others,
+          sharing the hope and love of Jesus with those around me.
+        </p>
+      </div>
+
+      <div class="fade-up">
+        <img src="Baptism_CJ.jpg" alt="Testimony">
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+
+  <section id="vision" class="light-section">
+    <div class="container center-text fade-up">
+
+      <div class="section-line" style="margin-inline:auto"></div>
+
+      <h2 class="section-title">
+        The Vision God Placed in My Heart
+      </h2>
+
+      <p class="vision-intro">
+        My vision is to become a passionate servant of Christ — growing in both knowledge and character while leading
+        others toward Him through faith, compassion, and truth.
+      </p>
+
+    </div>
+
+    <div class="container cards">
+
+      <div class="card fade-up">
+        <div class="card-icon">✦</div>
+
+        <h3>Discipleship</h3>
+
+        <p>
+          Helping believers grow deeper in faith, purpose, and their relationship with Christ.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-icon">✦</div>
+
+        <h3>Evangelism</h3>
+
+        <p>
+          Sharing the Gospel with humility, compassion, and unwavering love for people.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-icon">✦</div>
+
+        <h3>Youth Ministry</h3>
+
+        <p>
+          Encouraging young hearts to pursue Christ boldly in today’s modern world.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-icon">✦</div>
+
+        <h3>Digital Ministry</h3>
+
+        <p>
+          Using technology and social media to spread God’s Word across Bangladesh.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-icon">✦</div>
+
+        <h3>Serving Hidden Believers</h3>
+
+        <p>
+          Building a safe online spiritual space for those unable to openly practice their faith.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-icon">✦</div>
+
+        <h3>Apologetics</h3>
+
+        <p>
+          Defending the Christian faith with wisdom, truth, and grace while helping others find confidence in God’s
+          Word.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+
+  <section class="light-section">
+
+    <div class="container center-text fade-up">
+
+      <div class="section-line" style="margin-inline:auto"></div>
+
+      <h2 class="section-title">
+        Who I Feel Called to Serve
+      </h2>
+
+      <p class="vision-intro" style="max-width:900px; margin:auto;">
+        My heart is deeply burdened for the people of Bangladesh, especially those who have never truly encountered the
+        message of Jesus Christ with clarity, love, and understanding.
+      </p>
+
+    </div>
+
+    <div class="container audience-grid">
+
+      <div class="audience-box fade-up">
+        <span>✧</span>
+        <h3>Youth</h3>
+      </div>
+
+      <div class="audience-box fade-up">
+        <span>✧</span>
+        <h3>Students</h3>
+      </div>
+
+      <div class="audience-box fade-up">
+        <span>✧</span>
+        <h3>Online Communities</h3>
+      </div>
+
+      <div class="audience-box fade-up">
+        <span>✧</span>
+        <h3>Seekers</h3>
+      </div>
+
+      <div class="audience-box fade-up">
+        <span>✧</span>
+        <h3>Hidden Believers</h3>
+      </div>
+
+    </div>
+
+    <div class="container fade-up" style="max-width:950px; margin-top:90px;">
+
+      <div class="vision-block">
+
+        <h3 style="color:#102019;">
+          A Burden for Bangladesh
+        </h3>
+
+        <p style="color:#4a5b52;">
+          In Bangladesh, where Islam is the majority religion, many people grow up with misunderstandings about Jesus
+          and Christianity. Because of this, meaningful conversations about faith can often feel difficult or distant.
+        </p>
+
+        <p style="color:#4a5b52;">
+          Many of my Muslim friends and neighbours have never had the opportunity to truly understand who Jesus is
+          beyond the misconceptions they have heard.
+        </p>
+
+      </div>
+
+      <div class="vision-block">
+
+        <h3 style="color:#102019;">
+          Reaching People Through Love & Truth
+        </h3>
+
+        <p style="color:#4a5b52;">
+          I feel strongly called to reach people with humility, compassion, and truth, not through arguments, but
+          through Christ-like love and genuine understanding.
+        </p>
+
+        <p style="color:#4a5b52;">
+          My desire is to help break down barriers of misunderstanding and create opportunities for people to encounter
+          the true message of Jesus Christ.
+        </p>
+
+      </div>
+
+      <div class="vision-block">
+
+        <h3 style="color:#102019;">
+          The Great Commission
+        </h3>
+
+        <p style="color:#4a5b52; font-style:italic;">
+          “Go therefore and make disciples of all nations... teaching them to observe all that I have commanded you.” —
+          Matthew 28:19–20
+        </p>
+
+        <p style="color:#4a5b52;">
+          I believe God has placed a responsibility on my heart to serve those who have never fully heard or understood
+          the Gospel, especially within my own community.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- THEOLOGY -->
+
+  <section class="theology">
+
+    <div class="container fade-up">
+
+      <div class="section-line" style="margin-inline:auto"></div>
+
+      <h2 class="section-title">
+        Why I Chose to Study Theology in Quezon City, Philippines
+      </h2>
+
+      <p>
+        My dream of studying theology abroad is rooted in a deep desire to grow closer to God and become better equipped
+        to serve others faithfully.
+      </p>
+
+      <p>
+        I have always longed to study in a Christ-centered environment surrounded by believers who are passionate about
+        living out the Word of God. Studying in Quezon City, Philippines, especially at International Graduate School of
+        Leadership, represents an opportunity to step into a new culture, experience authentic Christian community, and
+        grow spiritually in ways that would shape both my character and future ministry.
+      </p>
+
+      <p>
+        I believe that being immersed in such an environment will help me better understand Scripture, witness the power
+        of faith in action, and learn from people who have dedicated their lives to discipleship and missions.
+      </p>
+
+      <p>
+        This dream is not simply about receiving an education. It is about preparation for the calling God has placed on
+        my life.
+      </p>
+
+      <p>
+        I want to learn how to preach the Gospel clearly, disciple others faithfully, counsel those who are hurting, and
+        serve people with humility, wisdom, and compassion.
+      </p>
+
+      <p>
+        Most importantly, I hope to return to Bangladesh better equipped to engage with the Muslim community around me,
+        sharing the love of Christ in a respectful, compassionate, and meaningful way.
+      </p>
+
+      <p>
+        Studying theology abroad no longer feels like just a personal ambition. It feels like a calling from God. I
+        believe He has already begun opening doors, and I trust Him to continue guiding each step of this journey in
+        faith.
+      </p>
+
+    </div>
+
+  </section>
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="container contact-grid">
+
+      <div class="fade-up">
+
+        <div class="section-line"></div>
+
+        <h2 class="section-title">
+          Partner With My Mission
+        </h2>
+
+        <p>
+          Whether through prayer, encouragement, or support, your partnership helps continue the mission God has placed
+          before me.
+        </p>
+
+        <br><br>
+
+        <div class="contact-info">
+
+          <p>
+            <strong>WhatsApp:</strong><br>
+            <a href="https://wa.me/8801841305813" target="_blank">
+              +880 1841-305813 (<strong>Bkash</strong>)
+            </a>
+          </p>
+
+          <p>
+            <strong>Email:</strong><br>
+            <a href="mailto:cjcrohan@gmail.com">
+              cjcrohan@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <strong>Instagram:</strong><br>
+            <a href="https://www.instagram.com/just_a_blessed_guy/" target="_blank">
+              @just_a_blessed_guy
+            </a>
+          </p>
+
+          <p>
+            <strong>Facebook:</strong><br>
+            <a href="https://www.facebook.com/Just.A.Blessed.Guy/" target="_blank">
+              Just.A.Blessed.Guy
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 Kingdom Mission — Living for Christ.
+    </footer>
+
+  </section>
+
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    fadeElements.forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
+
 </body>
 
 </html>
-
